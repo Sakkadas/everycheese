@@ -5,12 +5,12 @@ from django.utils.translation import gettext_lazy as _
 
 
 class User(AbstractUser):
-
     # First Name and Last Name Do Not Cover Name Patterns
     # Around the Globe.
     name = models.CharField(
         _("Name of User"), blank=True, max_length=255
     )
+    bio = models.TextField("Bio", blank=True)
 
     def get_absolute_url(self):
         return reverse(
