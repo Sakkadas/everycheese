@@ -1,3 +1,4 @@
+import pytest
 from everycheese.users.tests.factories import UserFactory
 from django.template.defaultfilters import slugify
 import factory.fuzzy
@@ -14,3 +15,8 @@ class CheeseFactory(factory.django.DjangoModelFactory):
 
     class Meta:
         model = Cheese
+
+
+@pytest.fixture
+def cheese():
+    return CheeseFactory()
